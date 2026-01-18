@@ -1,0 +1,367 @@
+/* Color Palette */
+
+:root {
+  --body-bg: #ffffff;
+  --color-body: #646363;
+  --color-healthcare: #542b74;
+  --color-hospitality: #f39200;
+  --color-leisure: #e30613;
+  --color-travel: #0071bc;
+  --color-businessSolution: #70bf1f;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Typography */
+
+html {
+  /* Default size is 16px for the all type og html elements */
+  /* 62.5% of 16px = 10px */
+
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-body);
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  background: var(--body-bg);
+  height: 100vh;
+  /* padding: 4rem 12.5rem 0 12.5rem; */
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.body-spacing {
+  padding: 4rem 4rem;
+}
+
+.navigation-container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.navigation-container a {
+  color: var(--color-body);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: normal;
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.navigation-container a.active {
+  background-color: var(--color-healthcare);
+  color: var(--body-bg);
+}
+
+.navigation-container a:hover {
+  background-color: var(--color-healthcare);
+  color: var(--body-bg);
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  padding: 1rem 4rem;
+}
+
+.section-label {
+  color: var(--color-healthcare);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.fields-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.fields-container select,
+.fields-container input,
+.fields-container button {
+  border: 2px solid var(--color-body);
+  font-weight: bold;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+}
+
+.fields-container input,
+.fields-container button {
+  text-align: center;
+}
+
+.fields-container select {
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+/* Custom chevron */
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 44%;
+  right: 2rem;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+}
+
+.fields-container input:focus-visible,
+.fields-container select:focus-visible {
+  outline: 0;
+}
+
+.fields-container input::placeholder {
+  color: #000;
+}
+
+.fields-container button {
+  background-color: transparent;
+}
+
+.filter-cards-container {
+  padding: 1rem 4rem;
+}
+
+.filter-cards {
+  display: grid;
+  /* grid-template-columns: repeat(5, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 3.5rem;
+}
+
+.card {
+  border: 2px solid #000;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  padding: 1rem 2rem;
+}
+
+.title p {
+  color: var(--color-body);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-inner {
+  padding: 1rem 2rem;
+}
+
+.date p,
+.job-type p,
+.card-desc p,
+.card-link a {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.designation p {
+  color: var(--color-body);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-label {
+  width: 100%;
+}
+
+.card-seperator {
+  height: 2px;
+  background: #000;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.job-type p,
+.card-desc p {
+  text-transform: capitalize;
+}
+
+.card-link a {
+  text-transform: uppercase;
+}
+
+/* Business Card */
+
+.card.business .title p,
+.card.healthcare .title p,
+.card.hospitality .title p,
+.card.leisure .title p,
+.card.travel .title p {
+  color: var(--body-bg);
+}
+
+.card.business {
+  border: 0.5rem solid var(--color-businessSolution);
+}
+
+.card.business .title {
+  background: var(--color-businessSolution);
+}
+
+.card.business .date p,
+.card.business .card-link a {
+  color: var(--color-businessSolution);
+}
+
+.card.business .card-seperator {
+  background: var(--color-businessSolution);
+}
+
+/* Healthcare Card */
+
+.card.healthcare {
+  border: 0.5rem solid var(--color-healthcare);
+}
+
+.card.healthcare .title {
+  background: var(--color-healthcare);
+}
+
+.card.healthcare .date p,
+.card.healthcare .card-link a {
+  color: var(--color-healthcare);
+}
+
+.card.healthcare .card-seperator {
+  background: var(--color-healthcare);
+}
+
+/* Hospitality Card */
+
+.card.hospitality {
+  border: 0.5rem solid var(--color-hospitality);
+}
+
+.card.hospitality .title {
+  background: var(--color-hospitality);
+}
+
+.card.hospitality .date p,
+.card.hospitality .card-link a {
+  color: var(--color-hospitality);
+}
+
+.card.hospitality .card-seperator {
+  background: var(--color-hospitality);
+}
+
+/* Leisure Card */
+
+.card.leisure {
+  border: 0.5rem solid var(--color-leisure);
+}
+
+.card.leisure .title {
+  background: var(--color-leisure);
+}
+
+.card.leisure .date p,
+.card.leisure .card-link a {
+  color: var(--color-leisure);
+}
+
+.card.leisure .card-seperator {
+  background: var(--color-leisure);
+}
+
+/* Travel Card */
+
+.card.travel {
+  border: 0.5rem solid var(--color-travel);
+}
+
+.card.travel .title {
+  background: var(--color-travel);
+}
+
+.card.travel .date p,
+.card.travel .card-link a {
+  color: var(--color-travel);
+}
+
+.card.travel .card-seperator {
+  background: var(--color-travel);
+}
+
+@media screen and (max-width: 768px) {
+  .body-spacing {
+    padding: 2rem;
+  }
+  .fields-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-container,
+  .filter-cards-container {
+    padding: 0;
+  }
+  .fields-container select,
+  .select-wrapper,
+  .fields-container input,
+  .fields-container button {
+    width: 100%;
+    text-align: center;
+  }
+}
