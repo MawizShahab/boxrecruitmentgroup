@@ -345,6 +345,163 @@ a {
   background: var(--color-travel);
 }
 
+/* Listing page design */
+
+.listing-card {
+  border: 0.5rem solid #000;
+  border-radius: 2rem;
+}
+
+.listing-card {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.listing-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem 4rem;
+}
+
+.listing-card-label .label {
+  padding: 1rem;
+  background: #000;
+}
+
+.listing-card-label .label p {
+  color: var(--body-bg);
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.listing-heading p,
+.listing-date p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.listing-content p,
+.listing-content a,
+.listing-heading ul {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #000;
+}
+
+.listing-redirection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rem;
+}
+
+.listing-redirection .back {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--color-body);
+}
+
+.listing-redirection .apply {
+  padding: 1rem 5rem;
+  background: #000;
+  color: var(--body-bg);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Listing cards colors */
+
+/* Business */
+
+.listing-card.business {
+  border: 0.5rem solid var(--color-businessSolution);
+}
+
+.listing-card.business .listing-card-label .label,
+.listing-card.business .unique-color {
+  background: var(--color-businessSolution);
+}
+
+.listing-card.business .unique,
+.listing-card.business li::marker {
+  color: var(--color-businessSolution);
+}
+
+/* Healthcare */
+
+.listing-card.healthcare {
+  border: 0.5rem solid var(--color-healthcare);
+}
+
+.listing-card.healthcare .listing-card-label .label,
+.listing-card.healthcare .unique-color {
+  background: var(--color-healthcare);
+}
+
+.listing-card.healthcare .unique,
+.listing-card.healthcare li::marker {
+  color: var(--color-healthcare);
+}
+
+/* Hospitality */
+
+.listing-card.hospitality {
+  border: 0.5rem solid var(--color-hospitality);
+}
+
+.listing-card.hospitality .listing-card-label .label,
+.listing-card.hospitality .unique-color {
+  background: var(--color-hospitality);
+}
+
+.listing-card.hospitality .unique,
+.listing-card.hospitality li::marker {
+  color: var(--color-hospitality);
+}
+
+/* Leisure */
+
+.listing-card.leisure {
+  border: 0.5rem solid var(--color-leisure);
+}
+
+.listing-card.leisure .listing-card-label .label,
+.listing-card.leisure .unique-color {
+  background: var(--color-leisure);
+}
+
+.listing-card.leisure .unique,
+.listing-card.leisure li::marker {
+  color: var(--color-leisure);
+}
+
+/* Travel */
+
+.listing-card.travel {
+  border: 0.5rem solid var(--color-travel);
+}
+
+.listing-card.travel .listing-card-label .label,
+.listing-card.travel .unique-color {
+  background: var(--color-travel);
+}
+
+.listing-card.travel .unique,
+.listing-card.travel li::marker {
+  color: var(--color-travel);
+}
+
 @media screen and (max-width: 768px) {
   .body-spacing {
     padding: 2rem;
@@ -363,5 +520,17 @@ a {
   .fields-container button {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .filter-cards {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .listing-redirection {
+    gap: 2.5rem;
   }
 }
